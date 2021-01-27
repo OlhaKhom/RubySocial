@@ -1,0 +1,26 @@
+<div class="col-md-8">
+<form action="/posts/create" method="POST">
+
+<div class="form-group">
+    <label for="title">Заголовок</label>
+    <input type="text" name="post[title]" class="form-control">
+  </div>
+
+   <div class="form-grouop">
+   <label for="exampleFormControlSelect1">Оберіть тему</label>
+   <select class="form-control" name="post[topic_id]">
+<% @topics.each do |topic| %>
+<option value="<%= topic.id %>"><% topic.title %></option>
+<% end %>
+</select>
+</div>
+
+  <div class="form-grouop">
+  <label>Текст:</label>
+  <textarea name="post[body]" class="form-control" rows="10"></textarea>
+</div>
+
+<button class="btn btn-primary" type="submit">Створити</button>
+
+</form>
+</div>
